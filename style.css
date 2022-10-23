@@ -1,0 +1,29 @@
+.stButton button {
+      background-color: white;
+      font-weight: bold;
+      width: 50px;
+      border: 2px solid black;
+}
+
+.stButton button:hover {
+     background-color:#1e90ff;
+     color: black;
+     border: 2px solid black;
+}
+
+.stButton button:focus { 
+    background-color:#FFFFFF;
+    color: black;
+    border: 2px solid black;
+ }
+
+button.css-1jn8ep9.edgvbvh9 {
+   font-weight: bold;
+   border: 2px solid black;     
+}
+
+button.css-1jn8ep9.edgvbvh9:hover {
+  background-color:#1e90ff;
+  color: black;
+  border: 2px solid black;
+}
