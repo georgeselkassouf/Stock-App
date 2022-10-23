@@ -36,4 +36,4 @@ Open a Command Prompt window and run the following lines of code:
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://georgeselkassouf-stock-app-stockapp-io0ijy.streamlitapp.com/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://georgeselkassouf-stock-app-stockapp-y3n825.streamlitapp.com/)
