@@ -32,6 +32,11 @@ Open a Command Prompt window and run the following lines of code:
  `streamlit run stockapp.py`
  
  `cd Stock-App`
+ 
+ 
+ ## Screencast
+
+https://user-images.githubusercontent.com/76153053/197422032-28ec1d05-a880-461b-ad76-04f0c9c11dd3.mp4
 
 
 ## Demo App
