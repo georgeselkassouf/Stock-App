@@ -2,6 +2,7 @@
 
 The requirements are available in the requirements.txt file in the main repository.
 
+
 ## Description
 
 * This web app retrieves stock prices from Yahoo Finance using the yfinance library.
@@ -11,7 +12,7 @@ The requirements are available in the requirements.txt file in the main reposito
 * The data obtained can be exported as a csv file.
 
 * A candlestick chart is plotted for the given data and can be saved as a PNG file.
-
+* 
 
 ## Custom Theme
 
@@ -36,12 +37,7 @@ Open a Command Prompt window and run the following lines of code:
  
  ## Screencast
 
-
-
-https://user-images.githubusercontent.com/76153053/197483507-a2857bf0-c005-4b92-94ab-4116819ee7c4.mp4
-
-<video src="https://user-images.githubusercontent.com/76153053/197483507-a2857bf0-c005-4b92-94ab-4116819ee7c4.mp4"></video>
-
+https://user-images.githubusercontent.com/76153053/197485439-b20bb2cb-b8de-4b17-8371-5c594cce15cf.mp4
 
 
 ## Demo App
