@@ -12,7 +12,6 @@ The requirements are available in the requirements.txt file in the main reposito
 * The data obtained can be exported as a csv file.
 
 * A candlestick chart is plotted for the given data and can be saved as a PNG file.
-* 
 
 ## Custom Theme
 
