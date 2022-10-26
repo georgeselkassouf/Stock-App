@@ -1,3 +1,5 @@
+# Stock App
+
 ## Requirements
 
 The requirements are available in the requirements.txt file in the main repository.
