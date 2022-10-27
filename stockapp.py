@@ -61,91 +61,95 @@ with side_5:
 
 # Define Main Function
 def stockretrieve(start_date, end_date):
-     tickerData = yf.Ticker(tickerSymbol)
-     tickerDf = pd.DataFrame(tickerData.history(period="1d", start = start_date, end = end_date))
-     tickerDf = tickerDf[['Open', 'High', 'Low', 'Close', 'Volume']]
-
-     # Adjusting the Date Column
-     tickerDf.reset_index(inplace=True)
-     tickerDf['Date'] = tickerDf['Date'].dt.date
-
-     # Ticker Information
-
      try:
-           string_logo = '<img src=%s>' % tickerData.info['logo_url']
-           st.markdown(string_logo, unsafe_allow_html=True)   
-     except:
-           pass
+           tickerData = yf.Ticker(tickerSymbol)
+           tickerDf = pd.DataFrame(tickerData.history(period="1d", start = start_date, end = end_date))
+           tickerDf = tickerDf[['Open', 'High', 'Low', 'Close', 'Volume']]
+
+           # Adjusting the Date Column
+           tickerDf.reset_index(inplace=True)
+           tickerDf['Date'] = tickerDf['Date'].dt.date
+
+           # Ticker Information
+
+           try:
+                 string_logo = '<img src=%s>' % tickerData.info['logo_url']
+                 st.markdown(string_logo, unsafe_allow_html=True)   
+           except:
+                 pass
+
+           try:
+                 string_name =tickerData.info['longName']
+                 st.header('**%s**' % string_name)       
+           except:
+                 pass
+
+           try:
+                 st.markdown('#### Summary')
+                 string_summary = tickerData.info['longBusinessSummary']
+                 st.info(string_summary)
+           except:
+                 pass
+
+           try:           
+                 st.markdown('#### Industry')
+                 string_industry = tickerData.info['industry']
+                 st.info(string_industry)
+           except:
+                 pass
+
+           try:
+                 st.markdown('#### Country')
+                 string_country = tickerData.info['country']
+                 st.info(string_country)
+           except:
+                 pass
+
+           # Ticker Data
+           st.header('**Data**')
+           st.write(tickerDf)     
+
+           # Define Download to csv Button
+           csv = tickerDf.to_csv(index=False).encode('utf-8')
+
+           st.download_button(
+           label="Download Data ",
+           data = csv,
+           file_name = "data.csv",
+           mime = "text/csv",
+           key='download-csv',
+           on_click=None
+           )
+
+           # Chart
+           st.header('**Candlestick Chart**')
+
+           fig = go.Figure()
+
+           config = {
+
+            'toImageButtonOptions': {
+
+               'filename': 'Candlestick Chart'
+            }
+
+           }
+
+           fig.add_trace(go.Candlestick(x=tickerDf['Date'],
+                open=tickerDf['Open'],
+                high=tickerDf['High'],
+                low=tickerDf['Low'],
+                close=tickerDf['Close'], name = 'market data'))
+
+           fig.update_layout(
+           xaxis_rangeslider_visible=False,
+           xaxis_title = 'Date',
+           )
+
+           st.plotly_chart(fig, config=config)
       
-     try:
-           string_name =tickerData.info['longName']
-           st.header('**%s**' % string_name)       
      except:
            pass
-
-     try:
-           st.markdown('#### Summary')
-           string_summary = tickerData.info['longBusinessSummary']
-           st.info(string_summary)
-     except:
-           pass
-            
-     try:           
-           st.markdown('#### Industry')
-           string_industry = tickerData.info['industry']
-           st.info(string_industry)
-     except:
-           pass
-
-     try:
-           st.markdown('#### Country')
-           string_country = tickerData.info['country']
-           st.info(string_country)
-     except:
-           pass
-
-     # Ticker Data
-     st.header('**Data**')
-     st.write(tickerDf)     
-     
-     # Define Download to csv Button
-     csv = tickerDf.to_csv(index=False).encode('utf-8')
-     
-     st.download_button(
-     label="Download Data ",
-     data = csv,
-     file_name = "data.csv",
-     mime = "text/csv",
-     key='download-csv',
-     on_click=None
-     )
-
-     # Chart
-     st.header('**Candlestick Chart**')
-      
-     fig = go.Figure()
-
-     config = {
-
-      'toImageButtonOptions': {
-
-         'filename': 'Candlestick Chart'
-      }
-
-     }
-      
-     fig.add_trace(go.Candlestick(x=tickerDf['Date'],
-          open=tickerDf['Open'],
-          high=tickerDf['High'],
-          low=tickerDf['Low'],
-          close=tickerDf['Close'], name = 'market data'))
-
-     fig.update_layout(
-     xaxis_rangeslider_visible=False,
-     xaxis_title = 'Date',
-     )
-      
-     st.plotly_chart(fig, config=config)
       
 if b1:
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
