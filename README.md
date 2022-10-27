@@ -31,11 +31,11 @@ Open a Command Prompt window and run the following lines of code:
 
 `git clone https://github.com/georgeselkassouf/Stock-App`
 
+ `cd Stock-App`
+
  `streamlit run stockapp.py`
  
- `cd Stock-App`
- 
- 
+
  ## Screencast
 
 https://user-images.githubusercontent.com/76153053/197485439-b20bb2cb-b8de-4b17-8371-5c594cce15cf.mp4
