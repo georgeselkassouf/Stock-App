@@ -149,7 +149,7 @@ def stockretrieve(start_date, end_date):
            st.plotly_chart(fig, config=config)
       
      except:
-           pass
+           st.markdown('#### No data found')
       
 if b1:
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
