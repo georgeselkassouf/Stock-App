@@ -102,7 +102,7 @@ def stockretrieve(start_date, end_date):
       
      st.plotly_chart(fig, config=config)
       
-if range = '1W':
+if range == '1W':
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
 
 elif range == '1M':
