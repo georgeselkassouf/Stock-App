@@ -163,5 +163,5 @@ elif b9:
 elif b10:
      stockretrieve(dt.date.today() - timedelta(days = 50000), dt.date.today())
      
-else:
+elif start_date:
      stockretrieve(start_date, end_date)
