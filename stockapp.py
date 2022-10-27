@@ -102,36 +102,36 @@ def stockretrieve(start_date, end_date):
       
      st.plotly_chart(fig, config=config)
       
-if range == '1W':
+if range = '1W':
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
 
-elif range == '1M':
+elif range = '1M':
      stockretrieve(dt.date.today() - timedelta(days = 30), dt.date.today())
      
-elif range == '3M':
+elif range = '3M':
      stockretrieve(dt.date.today() - timedelta(days = 90), dt.date.today())
      
-elif range == '6M':
+elif range = '6M':
      stockretrieve(dt.date.today() - timedelta(days = 180), dt.date.today())
      
-elif range == 'YTD':
+elif range = 'YTD':
      todaysdate = dt.date.today()
      startofyear = todaysdate.replace(month=1, day=1)
      stockretrieve(startofyear, dt.date.today())
 
-elif range == '1Y':
+elif range = '1Y':
      stockretrieve(dt.date.today() - timedelta(days = 365), dt.date.today())
      
-elif range == '2Y':
+elif range = '2Y':
      stockretrieve(dt.date.today() - timedelta(days = 730), dt.date.today())
      
-elif range == '5Y':
+elif range = '5Y':
      stockretrieve(dt.date.today() - timedelta(days = 1825), dt.date.today())
 
-elif range == '10Y':
+elif range = '10Y':
      stockretrieve(dt.date.today() - timedelta(days = 3650), dt.date.today())
      
-elif range == 'ALL':
+elif range = 'ALL':
      stockretrieve(dt.date.today() - timedelta(days = 50000), dt.date.today())
      
 else:
