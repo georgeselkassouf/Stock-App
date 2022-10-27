@@ -79,16 +79,23 @@ def stockretrieve(start_date, end_date):
      st.markdown('#### Summary')
      string_summary = tickerData.info['longBusinessSummary']
      st.info(string_summary)
+      
      try:
            st.markdown('#### Industry')
            string_industry = tickerData.info['industry']
            st.info(string_industry)
-     except:
-            pass
 
+    except:
+           pass
+      
+     try:
+      
      st.markdown('#### Country')
      string_country = tickerData.info['country']
      st.info(string_country)
+
+    except:
+           pass
 
      # Ticker Data
      st.header('**Data**')
