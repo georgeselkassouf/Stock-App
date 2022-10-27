@@ -85,7 +85,7 @@ def stockretrieve(start_date, end_date):
            string_industry = tickerData.info['industry']
            st.info(string_industry)
 
-    except:
+     except:
            pass
       
      try:
@@ -94,7 +94,7 @@ def stockretrieve(start_date, end_date):
      string_country = tickerData.info['country']
      st.info(string_country)
 
-    except:
+     except:
            pass
 
      # Ticker Data
