@@ -25,39 +25,10 @@ tickerSymbol = st.sidebar.selectbox("Stock Ticker", ticker_list)
 start_date = st.sidebar.date_input("Start date", dt.date(2019,1,1))
 end_date = st.sidebar.date_input("End date", dt.date.today())
 
-# Define Sidebar Columns
-side_1, side_2, side_3, side_4, side_5 = st.sidebar.columns(5)
+Range = st.radio(
+    "Choose Range",
+    ('1W', '1M', '3M','6M','YTD','1Y','2Y','5Y','10Y','ALL'))
 
-# Define Buttons
-with side_1:
-    b1 = st.button('1W')
-
-with side_1:
-    b6 = st.button('1Y')
-      
-with side_2:
-    b2 = st.button('1M')
-
-with side_2:
-    b7 = st.button('2Y')
-
-with side_3:
-    b3 = st.button('3M')
-
-with side_3:
-    b8 = st.button('5Y')
-
-with side_4:
-    b4 = st.button('6M')
-
-with side_4:
-    b9 = st.button('10Y')
-      
-with side_5:
-    b5 = st.button('YTD')
-
-with side_5:
-    b10 = st.button('ALL')
 
 # Define Main Function
 def stockretrieve(start_date, end_date):
@@ -131,37 +102,37 @@ def stockretrieve(start_date, end_date):
       
      st.plotly_chart(fig, config=config)
       
-if b1:
+if range == '1W':
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
 
-elif b2:
+elif range == '1M':
      stockretrieve(dt.date.today() - timedelta(days = 30), dt.date.today())
      
-elif b3:
+elif range == '3M':
      stockretrieve(dt.date.today() - timedelta(days = 90), dt.date.today())
      
-elif b4:
+elif range == '6M':
      stockretrieve(dt.date.today() - timedelta(days = 180), dt.date.today())
      
-elif b5:
+elif range == 'YTD':
      todaysdate = dt.date.today()
      startofyear = todaysdate.replace(month=1, day=1)
      stockretrieve(startofyear, dt.date.today())
 
-elif b6:
+elif range == '1Y':
      stockretrieve(dt.date.today() - timedelta(days = 365), dt.date.today())
      
-elif b7:
+elif range == '2Y':
      stockretrieve(dt.date.today() - timedelta(days = 730), dt.date.today())
      
-elif b8:
+elif range == '5Y':
      stockretrieve(dt.date.today() - timedelta(days = 1825), dt.date.today())
 
-elif b9:
+elif range == '10Y':
      stockretrieve(dt.date.today() - timedelta(days = 3650), dt.date.today())
      
-elif b10:
+elif range == 'ALL':
      stockretrieve(dt.date.today() - timedelta(days = 50000), dt.date.today())
      
-elif start_date:
+else:
      stockretrieve(start_date, end_date)
