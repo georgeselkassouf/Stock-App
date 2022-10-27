@@ -25,7 +25,7 @@ tickerSymbol = st.sidebar.selectbox("Stock Ticker", ticker_list)
 start_date = st.sidebar.date_input("Start date", dt.date(2019,1,1))
 end_date = st.sidebar.date_input("End date", dt.date.today())
 
-Range = st.radio(
+Range = st.sidebar.radio(
     "Choose Range",
     ('1W', '1M', '3M','6M','YTD','1Y','2Y','5Y','10Y','ALL'))
 
