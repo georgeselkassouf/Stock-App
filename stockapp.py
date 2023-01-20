@@ -66,8 +66,9 @@ def stockretrieve(start_date, end_date):
            tickerDf = tickerDf[['Open', 'High', 'Low', 'Close', 'Volume']]
 
            # Adjusting the Date Column
-           tickerDf.reset_index(inplace=True)
-           tickerDf['Date'] = (tickerDf['Date'].dt.date, errors='coerce')
+           #tickerDf.reset_index(inplace=True)
+           #tickerDf['Date'] = tickerDf['Date'].dt.date
+      
 
            # Ticker Information
 
