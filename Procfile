@@ -1,1 +1,1 @@
-web: sh setup.sh && run stockapp.py
+web: gunicorn stockapp:app
