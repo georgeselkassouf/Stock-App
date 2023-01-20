@@ -133,11 +133,11 @@ def stockretrieve(start_date, end_date):
 
            }
 
-           fig.add_trace(go.Candlestick(x=tickerDf['Date'],
-                open=tickerDf['Open'],
-                high=tickerDf['High'],
-                low=tickerDf['Low'],
-                close=tickerDf['Close'], name = 'market data'))
+        #   fig.add_trace(go.Candlestick(x=tickerDf['Date'],
+         #       open=tickerDf['Open'],
+          #      high=tickerDf['High'],
+           #     low=tickerDf['Low'],
+            #    close=tickerDf['Close'], name = 'market data'))
 
            fig.update_layout(
            xaxis_rangeslider_visible=False,
