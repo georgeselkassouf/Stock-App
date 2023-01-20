@@ -60,13 +60,14 @@ with side_5:
 
 # Define Main Function
 def stockretrieve(start_date, end_date):
+     try:
            tickerData = yf.Ticker(tickerSymbol)
            tickerDf = pd.DataFrame(tickerData.history(period="1d", start = start_date, end = end_date))
            tickerDf = tickerDf[['Open', 'High', 'Low', 'Close', 'Volume']]
 
            # Adjusting the Date Column
-           #tickerDf.reset_index(inplace=True)
-           #tickerDf['Date'] = tickerDf['Date'].dt.date
+           tickerDf.reset_index(inplace=True)
+           tickerDf['Date'] = tickerDf['Date'].dt.date
 
            # Ticker Information
 
@@ -133,11 +134,11 @@ def stockretrieve(start_date, end_date):
 
            }
 
-        #   fig.add_trace(go.Candlestick(x=tickerDf['Date'],
-         #       open=tickerDf['Open'],
-          #      high=tickerDf['High'],
-           #     low=tickerDf['Low'],
-            #    close=tickerDf['Close'], name = 'market data'))
+           fig.add_trace(go.Candlestick(x=tickerDf['Date'],
+                open=tickerDf['Open'],
+                high=tickerDf['High'],
+                low=tickerDf['Low'],
+                close=tickerDf['Close'], name = 'market data'))
 
            fig.update_layout(
            xaxis_rangeslider_visible=False,
@@ -145,7 +146,10 @@ def stockretrieve(start_date, end_date):
            )
 
            st.plotly_chart(fig, config=config)
-
+      
+     except:
+           st.markdown('#### No data found')
+      
 if b1:
      stockretrieve(dt.date.today() - timedelta(days = 7), dt.date.today())
 
