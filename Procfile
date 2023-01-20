@@ -1,1 +1,1 @@
-web: gunicorn stockapp:app
+web: python3 stockapp.py
