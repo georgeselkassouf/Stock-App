@@ -60,7 +60,6 @@ with side_5:
 
 # Define Main Function
 def stockretrieve(start_date, end_date):
-     try:
            tickerData = yf.Ticker(tickerSymbol)
            tickerDf = pd.DataFrame(tickerData.history(period="1d", start = start_date, end = end_date))
            tickerDf = tickerDf[['Open', 'High', 'Low', 'Close', 'Volume']]
@@ -71,38 +70,23 @@ def stockretrieve(start_date, end_date):
 
            # Ticker Information
 
-           try:
-                 string_logo = '<img src=%s>' % tickerData.info['logo_url']
-                 st.markdown(string_logo, unsafe_allow_html=True)   
-           except:
-                 pass
+           string_logo = '<img src=%s>' % tickerData.info['logo_url']
+           st.markdown(string_logo, unsafe_allow_html=True)   
 
-           try:
-                 string_name =tickerData.info['longName']
-                 st.header('**%s**' % string_name)       
-           except:
-                 pass
+           string_name =tickerData.info['longName']
+           st.header('**%s**' % string_name)       
 
-           try:
-                 st.markdown('#### Summary')
-                 string_summary = tickerData.info['longBusinessSummary']
-                 st.info(string_summary)
-           except:
-                 pass
+           st.markdown('#### Summary')
+           string_summary = tickerData.info['longBusinessSummary']
+           st.info(string_summary)
+   
+           st.markdown('#### Industry')
+           string_industry = tickerData.info['industry']
+           st.info(string_industry)
 
-           try:           
-                 st.markdown('#### Industry')
-                 string_industry = tickerData.info['industry']
-                 st.info(string_industry)
-           except:
-                 pass
-
-           try:
-                 st.markdown('#### Country')
-                 string_country = tickerData.info['country']
-                 st.info(string_country)
-           except:
-                 pass
+           st.markdown('#### Country')
+           string_country = tickerData.info['country']
+           st.info(string_country)
 
            # Ticker Data
            st.header('**Data**')
@@ -146,8 +130,7 @@ def stockretrieve(start_date, end_date):
            )
 
            st.plotly_chart(fig, config=config)
-      
-     except:
+
            st.markdown('#### No data found')
       
 if b1:
