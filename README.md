@@ -43,4 +43,4 @@ https://user-images.githubusercontent.com/76153053/197485439-b20bb2cb-b8de-4b17-
 
 ## Demo App
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://georgeselkassouf-stock-app-stockapp-y3n825.streamlitapp.com/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://georgeselkassouf-stock-app-stockapp-lz246t.streamlit.app//)
