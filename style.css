@@ -17,18 +17,18 @@
     border: 2px solid black;
  }
 
-.css-14kv4pi edgvbvh10 {
+button.css-14kv4pi edgvbvh10 {
    font-weight: bold;
    border: 2px solid black;     
 }
 
-.css-14kv4pi edgvbvh10:hover {
+button.css-14kv4pi edgvbvh10:hover {
   background-color:#1e90ff;
   color: black;
   border: 2px solid black;
 }
 
-.css-14kv4pi edgvbvh10:focus { 
+button.css-14kv4pi edgvbvh10:focus { 
     background-color:#FFFFFF;
     color: black;
     border: 2px solid black;
