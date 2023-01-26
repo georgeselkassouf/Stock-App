@@ -16,3 +16,23 @@
     color: black;
     border: 2px solid black;
  }
+
+
+.stDownloadButton button {
+      background-color: white;
+      font-weight: bold;
+      width: 60px;
+      border: 2px solid black;
+}
+
+.stDownloadButton button:hover {
+     background-color:#1e90ff;
+     color: black;
+     border: 2px solid black;
+}
+
+.stDownloadButton button:focus { 
+    background-color:#FFFFFF;
+    color: black;
+    border: 2px solid black;
+ }
