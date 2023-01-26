@@ -1,34 +1,17 @@
-button.css-1l6p7to edgvbvh10 {
+.stButton button {
       background-color: white;
       font-weight: bold;
-      width: 60px;
+      width: 50px;
       border: 2px solid black;
 }
 
-button.css-1l6p7to edgvbvh10:hover {
+.stButton button:hover {
      background-color:#1e90ff;
      color: black;
      border: 2px solid black;
 }
 
-button.css-1l6p7to edgvbvh10:focus { 
-    background-color:#FFFFFF;
-    color: black;
-    border: 2px solid black;
- }
-
-button.css-14kv4pi edgvbvh10 {
-   font-weight: bold;
-   border: 2px solid black;     
-}
-
-button.css-14kv4pi edgvbvh10:hover {
-  background-color:#1e90ff;
-  color: black;
-  border: 2px solid black;
-}
-
-button.css-14kv4pi edgvbvh10:focus { 
+.stButton button:focus { 
     background-color:#FFFFFF;
     color: black;
     border: 2px solid black;
