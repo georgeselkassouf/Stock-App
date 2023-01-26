@@ -27,3 +27,9 @@ button.css-1jn8ep9.edgvbvh9:hover {
   color: black;
   border: 2px solid black;
 }
+
+button.css-1jn8ep9.edgvbvh9:focus { 
+    background-color:#FFFFFF;
+    color: black;
+    border: 2px solid black;
+ }
