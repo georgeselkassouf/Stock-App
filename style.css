@@ -1,17 +1,17 @@
-.stButton button {
+button.css-1l6p7to edgvbvh10 {
       background-color: white;
       font-weight: bold;
       width: 60px;
       border: 2px solid black;
 }
 
-.stButton button:hover {
+button.css-1l6p7to edgvbvh10:hover {
      background-color:#1e90ff;
      color: black;
      border: 2px solid black;
 }
 
-.stButton button:focus { 
+button.css-1l6p7to edgvbvh10:focus { 
     background-color:#FFFFFF;
     color: black;
     border: 2px solid black;
